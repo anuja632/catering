@@ -19,678 +19,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
   <link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
-  <!-- Custom CSS -->
-  <style>
-
-:root {
-	--primary-color			: #FFFFFF;
-	--secondary-color		: #E9b472;
-	--text-color			: #28282B;
-	--accent-color			: #222222;
-	--background-color		: #F7F4ED;
-	--dark-background		: #000000;
-	--dark-text-color		: #D3D3D3;
-	--error-color			: #FF0000;
-      --default-font       : 'Merienda', sans-serif;
-      --accent-font        : 'Domine', serif;
-	--transition			: all 0.3s ease-in-out;
-	--ticker-gap			: 40px;
-	--photo-gap				: 15px;
-}
-
-/************************************/
-/**** 	   02. General css		 ****/
-/************************************/
-
-body {
-	/* font-family: var(--default-font); */
-    font-family:'Merienda', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.6em;
-	color: var(--text-color);
-	
-	
-}
-
-p{
-	line-height: 1.7em;
-}
- 
-p:last-child {
-	margin-bottom: 0;
-}
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-	/* font-family:  var(--accent-font); */
-    font-family: 'Domine', serif;
-	margin-top:0;
-	font-weight:600;
-	
-}
-
-figure{
-	margin: 0;
-}
-
-img{
-	max-width: 100%;
-}
-
-a{
-	text-decoration: none;
-}
-
-a:hover{
-	text-decoration: none;
-	outline: 0;
-}
-
-a:focus{
-	text-decoration: none;
-	outline: 0;
-}
-
-.container{
-	max-width: 1300px;
-}
-
-.container,
-.container-fluid,
-.container-lg,
-.container-md,
-.container-sm,
-.container-xl,
-.container-xxl {
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.row {
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-.row > * {
-	padding-right: 15px;
-	padding-left: 15px;
-}
-
-.row.no-gutters{
-	margin-right: 0px;
-    margin-left: 0px;
-}
-
-.row.no-gutters > * {
-	padding-right: 0px;
-	padding-left: 0px;
-}
-
-.btn-default {
-	display: inline-block;
-	font-family: var(--default-font);
-	font-size: 16px;
-	font-weight: 600;
-	line-height: 1.1em;
-	color: var(--accent-color);
-	background: transparent;
-	text-align: start;
-	padding: 16px 60px 16px 20px;
-	border: 2px solid var(--accent-color);
-	border-radius: 100px;
-	transition: var(--transition);
-	position: relative;
-	overflow: hidden;
-	z-index: 1;
-}
-
-.btn-default::before {
-	content: '\f061';
-	position: absolute;
-	top: 50%;
-	right: 0;
-	bottom: 0;
-	font-family: 'FontAwesome';
-	font-size: 16px;
-	font-weight: 900;
-	width: 36px;
-	height: 36px;
-	color: #ffffff;
-	background-color:#951F44;
-	border: 1.5px solid var(--accent-color);
-	border-radius: 50%;
-	transition: var(--transition);
-	transform: translate(-6px, -50%);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.btn-default::after{ 
-	content: '';
-    display: block;
-    width: 0;
-    position: absolute;
-	top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    background: var(--secondary-color);
-    border-radius: 30px;
-    transition: var(--transition);
-}
-
-.btn-default:hover::after{
-	width: 100%;
-}
-
-.btn-default:hover::before {
-	background-color: var(--primary-color);
-	border-color: var(--secondary-color);
-	color:black;
-}
-
-.reveal{
-	position: relative;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    visibility: hidden;
-    overflow: hidden;
-}
-
-.reveal img{
-    height: 100%;
-    width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    -webkit-transform-origin: left;
-    transform-origin: left;
-}
-
-
-.reveal.image-anime {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.text-anime {
-  font-size: 32px;
-  font-weight: bold;
-  color: #fff;
-  line-height: 1.4;
-  animation: fadeInUp 1s ease forwards;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media(min-width:768px){
-	.footermar{
-		margin-top:55px !important;
-	}
-}
-
-.image-anime:after{
-	content: "";
-	position: absolute;
-    width: 300%;
-    height: 0%;
-    left: 50%;
-    top: 50%;
-    background-color: rgba(255,255,255,.2);
-    transform: translate(-50%,-50%) rotate(-45deg);
-    z-index: 1;
-}
-
-.image-anime:hover:after {
-    height: 250%;
-    transition: all 600ms linear;
-    background-color: transparent;
-}
-
-#magic-cursor {
-	position: absolute;
-	width: 14px !important;
-	height: 14px !important;
-	pointer-events: none;
-	z-index:1000000;
-}
-
-#ball{
-	position: fixed;
-	display: block;
-	left: 0;
-	top: 0;
-	transform: translate(-50%, -50%);
-	background: var(--secondary-color);
-	width: 14px !important;
-	height: 14px !important;
-	border-radius: 50%;
-	pointer-events: none;
-	opacity: 1 !important;
-}
-
-.preloader{
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 1000;
-	background-color: #951F44;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.loading-container,
-.loading{
-	height: 100px;
-	position: relative;
-	width: 100px;
-	border-radius: 100%;
-}
-
-.loading-container{
-	margin: 40px auto
-}
-
-.loading{
-	border: 1px solid transparent;
-	border-color: transparent #fff transparent #FFF;
-	animation: rotate-loading 1.5s linear 0s infinite normal;
-	transform-origin: 50% 50%;
-}
-
-.loading-container:hover .loading,
-.loading-container .loading{
-	transition: all 0.5s ease-in-out;
-}
-
-#loading-icon{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	max-width: 50px;
-	transform: translate(-50%, -50%);
-}
-
-@keyframes rotate-loading {
-	0% {
-		transform: rotate(0deg);
-	}
-
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-.section-title{
-	margin-bottom: 60px;
-	text-align: center;
-}
-
-.section-title h3 {
-	display: inline-block;
-	position: relative;
-	font-family: var(--default-font);
-	font-size: 16px;
-	font-weight: 600;
-	/* text-transform: uppercase; */
-	letter-spacing: 2px;
-	color: var(--text-color);
-	margin-bottom: 15px;
-}
-
-
-
-.section-title h2 {
-	font-size: 35px;
-	color: var(--accent-color);
-	line-height: 1.2em;
-	margin-bottom: 20px;
-}
-
-/************************************/
-/**** 	   03. Header css		 ****/
-/************************************/
-
-
-    /* Hero Section */
-    .hero {
-    height: 100vh;
-      background: url('https://img-cdn.thepublive.com/filters:format(webp)/elle-india/media/post_attachments/wp-content/uploads/2024/09/Malabar-Diaries-1.jpg') no-repeat center center;
-      background-size: cover;
-      background-attachment: fixed;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 180px 0;
-      /* margin-top: -117px; */
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background: #000;
-      opacity: 0.6;
-      z-index: 0;
-    }
-
-    .hero .container {
-      position: relative;
-      z-index: 1;
-      max-width: 780px;
-      text-align: center;
-      color: var(--primary-color);
-    }
-
-    .hero .section-title h1,
-    .hero .section-title h3,
-    .hero .section-title p {
-      color: var(--primary-color);
-      text-shadow: 1px 1px 4px black;
-    }
-
-    .hero .section-title h1 {
-      font-size: 60px;
-    }
-
-    .hero-footer {
-      max-width: 340px;
-      margin: 30px auto 0;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-
-
-
-    /* Down Arrow */
-    .down-arrow a {
-      position: absolute;
-      left: 50%;
-      bottom: 30px;
-      width: 24px;
-      height: 36px;
-      border: 2px solid var(--primary-color);
-      border-radius: 100px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transform: translateX(-50%);
-      animation: jumpInfinite 1.5s infinite;
-    }
-
-    .down-arrow a img {
-      width: 12px;
-      height: 24px;
-    }
-
-    @keyframes jumpInfinite {
-      0% { margin-bottom: 0; }
-      50% { margin-bottom: 20px; }
-      100% { margin-bottom: 0; }
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    
-/************************************/
-/****     05. About us css		 ****/
-/************************************/
-
-.home-about {
-	padding: 150px 0 100px;
-	background: var(--primary-color);
-	position: relative;
-}
-
-.home-about::before,
-.gallery-page::before,
-.send-msg-section::before,
-.advance-booking-page::before {
-	content: '';
-	position: absolute;
-	top: 50%;
-	right: 0;
-	bottom: auto;
-	background: url('../images/home-about-bg.png') no-repeat;
-	width: 465px;
-	height: 610px;
-	transform: translateY(-50%);
-}
-
-.home-about .container {
-	position: relative;
-	z-index: 1;
-}
-
-.home-about-left {
-	position: relative;
-}
-
-.home-about-left .home-about-img {
-	display: inline-flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.home-about-left .home-about-img figure {
-    width: 48%;
-    height: 550px;
-}
-
-.home-about-left .home-about-img figure img {
-	width: 100%;
-	border-radius: 30px;
-}
-
-.home-about-left .home-about-since {
-	position: absolute;
-	top: 0;
-	right: 0;
-	background-color: #951F44;
-	border: 10px solid #E9b472;
-	border-radius: 50%;
-	width: 190px;
-	height: 190px;
-	transform: translate(50px, -70px);
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	align-content: center;
-	justify-content: center;
-	text-align: center;
-	z-index: 1;
-}
-
-.home-about-since h3 {
-	font-size: 24px;
-	color: var(--primary-color);
-	width: 100%;
-	margin-bottom: 10px;
-}
-
-.home-about-since h2 {
-	font-size: 30px;
-	color: var(--primary-color);
-	width: 100%;
-	margin-bottom: 0;
-}
-
-.home-about-right {
-	padding-left: 60px;
-}
-
-.home-about-right .section-title {
-	text-align: start;
-	margin-bottom: 20px;
-}
-
-.home-about-right p {
-	margin-bottom: 30px;
-}
-
-.about-icon-box {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.about-icon-box .icon-box {
-	width: 47%;
-	background: var(--primary-color);
-	border-radius: 10px;
-	padding: 30px;
-	margin-bottom: 30px;
-	box-shadow: 0px 0px 30px 0px #0000000D;
-
-}
-
-.icon-box .icon-box-img {
-	margin-bottom: 20px;
-}
-
-.icon-box .icon-box-content h3 {
-	font-size: 14px;
-	color: var(--accent-color);
-        /* text-transform: lowercase; */
-}
-
-.icon-box .icon-box-content p {
-	margin-bottom: 0;
-}
-/********************************/
-/****    24. Responsive css   ***/
-/********************************/
-
-@media only screen and (max-width: 991px) {
-
-	#magic-cursor{
-		display: none;
-	}
-
-	.section-title {
-		margin-bottom: 40px;
-	}
-	
-	.section-title h2 {
-		font-size: 36px;
-	}
-
-	.hero {
-		margin-top: -98px;
-	}
-
-	.hero .section-title h1 {
-		font-size: 50px;
-	}
-
-	.hero-content p {
-		max-width: 650px;
-	}
-
-	.home-about {
-		padding: 90px 0 60px;
-	}
-
-	.home-about-left {
-		text-align: center;
-	}
-
-	.home-about-left .home-about-img {
-		width: 90%;
-	}
-.home-about-left .home-about-img figure {
-    height:auto;
-}
-	.home-about-left .home-about-since {
-		width: 180px;
-		height: 180px;
-		transform: translate(10px, -70px);
-	}
-
-	.home-about-since h3 {
-		font-size: 22px;
-	}
-.aa  .row{
-gap:15px !important;
-}
-	.home-about-since h2 {
-		font-size: 42px;
-	}
-
-	.home-about-right {
-		padding-top: 40px;
-		padding-left: 0;
-	}
-
-	.why-choose-us {
-		padding: 30px 0;
-	}
-	
-	.why-choose-us::before, 
-	.about-gallery::before {
-		width: 200px;
-		height: 340px;
-	}
-
-	.why-choose-us .section-title h2 {
-		max-width: 450px;
-	}
-	
-	.wcu-img-box {
-		padding: 30px 20px 20px;
-		border-radius: 20px;
-	}
-	
-	.image-box figure {
-		width: 60%;
-		margin: 0 auto 20px;
-	}
-	
-	.image-box figure::before {
-		width: 60px;
-		height: 60px;
-		transform: translate(5px, -10px);
-	}
-	
-	.image-box img {
-		width: 70px;
-		height: 70px;
-	}
-	
-	.image-body h3 {
-		font-size: 20px;
-	}
-}
-  </style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <!-- Navbar -->
@@ -839,27 +168,152 @@ gap:15px !important;
 			</div>
 		</div>
 	</div>
+<div class="events-post">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Section Title Start -->
+        <div class="section-title text-center">
+          <h3 class="wow fadeInUp" data-wow-delay="0.50s">What We Do</h3>
+          <h2 class="text-anime wow fadeInUp" data-wow-delay="0.60s">
+            <span class="animated-text"> Catering Services</span>
+          </h2>
+        </div>
+        <!-- Section Title End -->
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Wedding Event -->
+      <div class="col-lg-4 col-md-12">
+        <div class="post-item wow fadeInUp" data-wow-delay="1.0s">
+          <div class="post-featured-image">
+            <a href="#">
+              <figure class="image-anime">
+                <img src="https://creationframemakers.com/wp-content/uploads/2025/03/Panjabi-wedding-photography-in-welcomhotel-by-itc-hotels-in-Chennai_creationframemakers_tamilnadu-1620x1080-13.webp" alt="Wedding Catering Event">
+              </figure>
+            </a>
+          </div>
+          <div class="post-header">
+            <h3 class="gradient-underline mb-3"><a href="#">Wedding Event</a></h3>
+            <p>
+              Weddings are all about bringing loved ones together to celebrate. When more people gather, it becomes a feast—and no feast is complete without delicious food. We ensure your guests have an unforgettable culinary experience by indulging their taste buds.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corporate Event -->
+      <div class="col-lg-4 col-md-12">
+        <div class="post-item wow fadeInUp" data-wow-delay="0.75s">
+          <div class="post-featured-image">
+            <a href="#">
+              <figure class="image-anime">
+                <img src="https://img.freepik.com/free-photo/celebration-hall-with-full-guests_8353-10399.jpg?t=st=1753532569~exp=1753536169~hmac=9a101db9b7cd662eec1dfe4b447b8740c2c4efb8f6b189cb883c7cda89b4e5f6&w=1060" alt="Corporate Catering Event">
+              </figure>
+            </a>
+          </div>
+          <div class="post-header">
+            <h3 class="gradient-underline mb-3"><a href="#">Corporate Event</a></h3>
+            <p>
+              Whether it's a corporate gathering, business event, or milestone celebration, our catering elevates your experience with personalized menus. We focus on taste and presentation to ensure every guest feels delighted, leaving a lasting impression of your event.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Birthday Party -->
+      <div class="col-lg-4 col-md-12">
+        <div class="post-item wow fadeInUp" data-wow-delay="1.25s">
+          <div class="post-featured-image">
+            <a href="#">
+              <figure class="image-anime">
+                <img src="https://img.freepik.com/premium-photo/cheerful-kids-attending-birthday-party_259150-5021.jpg?uid=R208066470&ga=GA1.1.1679070017.1753435898&semt=ais_hybrid&w=740&q=80" alt="Birthday Party Catering">
+              </figure>
+            </a>
+          </div>
+          <div class="post-header">
+            <h3 class="gradient-underline mb-3"><a href="#">Birthday Party</a></h3>
+            <p>
+              From a child’s first birthday to milestone celebrations, we make your event extra special. Our vibrant food offerings ensure every guest enjoys the day as much as the host. At Venus Catering, we help you share happiness through unforgettable cuisine.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- View All Services Button -->
+      <div class="col-12 d-flex justify-content-center">
+        <a href="services.html" class="btn-default wow fadeInUp" data-wow-delay="1.50s">View All Services</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="why-choose-us py-5 bg-light">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h3 class="wow fadeInUp" data-wow-delay="0.2s">Why Choose Us</h3>
+      <h2 class="wow fadeInUp" data-wow-delay="0.4s">Delivering Excellence in Every Bite</h2>
+    </div>
+
+    <div class="row">
+      <!-- Feature Item 1 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card text-center p-4 wow fadeInUp feature-card" data-wow-delay="0.2s">
+          <div class="icon icon-blue mb-3">
+            <img src="https://img.freepik.com/free-vector/food-collection-blackboard-style_23-2147780316.jpg?w=740" alt="Delicious Menu" class="feature-icon">
+          </div>
+          <h5>Delicious Menus</h5>
+          <p>We offer a diverse range of flavorful dishes, crafted with fresh and high-quality ingredients to please every taste.</p>
+        </div>
+      </div>
+
+      <!-- Feature Item 2 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card text-center p-4 wow fadeInUp feature-card" data-wow-delay="0.4s">
+          <div class="icon mb-3">
+            <img src="https://img.freepik.com/free-vector/hand-drawn-chef-badge_23-2147517380.jpg?w=740" alt="Professional Staff" class="feature-icon">
+          </div>
+          <h5>Professional Staff</h5>
+          <p>Our skilled and friendly team is dedicated to providing attentive service and ensuring a smooth experience time.</p>
+        </div>
+      </div>
+
+      <!-- Feature Item 3 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card text-center p-4 wow fadeInUp feature-card" data-wow-delay="0.6s">
+          <div class="icon mb-3">
+            <img src="https://img.freepik.com/premium-vector/premium-quality-stamp-luxury-elegant-business-icon-product-logo-design_567423-299.jpg?w=740" alt="Trusted Quality" class="feature-icon">
+          </div>
+          <h5>Trusted Quality</h5>
+          <p>We maintain strict standards of quality, using safe practices and premium ingredients in every dish we prepare.</p>
+        </div>
+      </div>
+
+      <!-- Feature Item 4 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card text-center p-4 wow fadeInUp feature-card" data-wow-delay="0.8s">
+          <div class="icon mb-3">
+            <img src="https://thumbs.dreamstime.com/b/food-delivery-motorcycle-illustration-person-riding-big-white-box-design-white-background-98059579.jpg" alt="Timely Delivery" class="feature-icon">
+          </div>
+          <h5>Timely Delivery</h5>
+          <p>Count on us for prompt, reliable delivery—ensuring your meals arrive fresh and right when you need them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
   <!-- WOW.js Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-  <script>
-    new WOW().init();
-  </script>
-  <script>
-  const greetings = ["Vanakkam!", "Welcome!", "Namaskaram!", "Namaskara!", "Namaste!"];
-  const rotatingText = document.getElementById("rotating-text");
-  let index = 0;
 
-  setInterval(() => {
-    rotatingText.style.opacity = 0; // fade out
-    setTimeout(() => {
-      index = (index + 1) % greetings.length;
-      rotatingText.textContent = greetings[index];
-      rotatingText.style.opacity = 1; // fade in
-    }, 500);
-  }, 3000); // change every 3 seconds
+  <script>
+     new WOW().init();
+ 
 </script>
-
+<script src="js/script.js"></script>
 
 </body>
 </html>
