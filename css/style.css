@@ -1572,3 +1572,9 @@ gap:15px !important;
       padding-top: 60px;
       padding-bottom: 60px;
     }
+
+    @media (max-width:500px){
+      .fact-count {
+    font-size: 25px;
+}
+    }
