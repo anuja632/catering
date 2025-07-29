@@ -221,6 +221,14 @@ a:focus{
 	.footermar{
 		margin-top:55px !important;
 	}
+
+	.fact-title {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: white;
+}
 	
 	.restaurant-inforamtion {
 		padding: 60px 0 30px;
@@ -278,7 +286,7 @@ a:focus{
 
 	.always-quality {
 		background-size: 150px;
-		padding: 50px 0 20px;
+		/* padding: 50px 0 20px; */
 	}
 	
 	.always-quality::before {		
@@ -417,14 +425,27 @@ a:focus{
       font-size: 16px;
       font-weight: 500;
 	  align-content: center;
+    	padding: 14px 60px 16px 20px;
+      color:black;
+
     }
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link.active {
+    color: #951F44 !important;
+    font-weight: bold;
+}
+
+
     .navbar .btn-default {
 
       color:  #951F44 !important;
 	  border:1px solid  #951F44 !important;
   
     }
-
+.navbar-nav{
+  gap:20px;
+}
 
 	
 /************************************/
@@ -525,7 +546,7 @@ a:focus{
 /************************************/
 
 .home-about {
-	padding: 150px 0 100px;
+	padding: 100px 0 10px;
 	background: var(--primary-color);
 	position: relative;
 }
@@ -666,7 +687,8 @@ a:focus{
 
     .post-featured-image img {
       width: 100%;
-      height: auto;
+      height: 250px;
+	  object-fit: cover;
       border-radius: 10px;
     }
 
@@ -738,7 +760,7 @@ a:focus{
 /* On focus: highlight field */
 #booking-form-section input:focus,
 #booking-form-section textarea:focus {
-  border-color: #ffc107;
+  border-color:#E9B472;
   outline: none;
 }
 
@@ -895,7 +917,7 @@ a:focus{
       font-size: 14px;
       letter-spacing: 2px;
       text-decoration: none;
-      color: #ccc;
+      color: white;
       transition: color 0.3s;
     }
 
@@ -1025,113 +1047,78 @@ a:focus{
 .breadcrumb-item.active {
   color: #ffd700;
 }
+    .always-quality {
+      position: relative;
+      background: url('https://venuscateringservice.com/images/most-popular-dises-bg.png') no-repeat bottom right;
+      background-size: 500px;
+      /* padding: 100px 0 70px; */
+      overflow: hidden;
+    }
+
+    .always-quality::before {
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: 0;
+      width: 200px;
+      height: 115px;
+      background: url("https://venuscateringservice.com/images/most-popular-dises-bg.png") no-repeat left bottom;
+      background-size: contain;
+      z-index: 0;
+    }
+
+    .always-quality .container {
+      position: relative;
+      z-index: 1;
+    }
 
 
-.always-quality {
-	background: url('https://venuscateringservice.com/images/most-popular-dises-bg.png') no-repeat bottom right;
-    background-size: 500px;
-    padding: 100px 0 70px;
-	position: relative;
-}
+    .team-card {
+      background-color: var(--background-color);
+      border-radius: 30px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
 
-.always-quality::before {
-	content: '';
-	position: absolute;
-	top: auto;
-	left: 0;
-	bottom: 0;
-	background: url("https://venuscateringservice.com/images/most-popular-dises-bg.png") no-repeat;
-	background-size: cover;
-	width: 200px;
-	height: 115px;
-}
+    .team-img img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: all 0.5s ease-in-out;
+    }
 
-.always-quality .container {
-	position: relative;
-	z-index: 1;
-}
+    .team-body {
+      padding: 20px;
+      text-align: center;
+    }
 
-.always-quality .row .col-lg-4.col-md-6 {
-	margin: 0 auto;
-}
+    .team-card-header h4 {
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #fff;
+      background-color:#951F44;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
 
-.team-card {
-	background-color: var(--background-color);
-	border-radius: 30px;
-	margin-bottom: 30px;
-	overflow: hidden;
-}
+    .team-card-header h3 {
+      font-size: 20px;
+      margin: 15px 0 10px;
+      color: var(--dark-background);
+    }
 
-.team-card .team-img img {
-	width: 100%;
-	height:250px;
-	object-fit: cover;
-	transition: all 0.5s ease-in-out;
-}
-
-.team-card .team-body {
-	padding: 0 20px 20px;
-	margin-top: -20px;
-	text-align: center;
-}
-
-.team-body .team-card-header h4 {
-	position: relative;
-	display: inline-block;
-	font-size: 16px;
-	font-weight: 700;
-	text-transform: uppercase;
-	color: var(--primary-color);
-	background-color: #951F44;
-	border-radius: 5px;
-	padding: 12px 25px;
-	margin: 0;
-	z-index: 1;
-}
-
-.team-body .team-card-header h3 {
-	font-size: 20px;
-	color: var(--dark-background);
-	margin: 30px 0 20px;
-}
-
-.team-body .team-content p {
-	font-size: 16px;
-	color: #5C6167;
-}
-
-.team-body .team-social-link {
-	margin-top: 20px;
-}
-
-.team-body .team-social-link a,
-.post-footer .post-social-link a {
-	display: inline-block;
-	color: inherit;
-}
-
-.team-body .team-social-link a i,
-.post-footer .post-social-link a i {
-	font-family: "Font Awesome 6 Brands";
-	font-size: 18px;	
-	width: 35px;
-	height: 35px;
-	color: var(--secondary-color);
-	background-color: transparent;
-	border: 1px solid var(--secondary-color);
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;	
-	margin-right: 10px;
-	transition: all 0.4s ease-in-out;
-}
-
-.team-body .team-social-link a i:hover {
-	color: var(--primary-color);
-	background-color: var(--secondary-color);
-}
-
+    .team-content p {
+      font-size: 16px;
+      color: #5C6167;
+    }
 .sponsors-section {
 	padding: 100px 0;
 }
@@ -1321,7 +1308,7 @@ a:focus{
 	}
 
 	.home-about {
-		padding: 90px 0 60px;
+		padding: 90px 0 0px;
 	}
 
 	.home-about-left {
@@ -1351,7 +1338,7 @@ gap:15px !important;
 	}
 
 	.home-about-right {
-		padding-top: 40px;
+		padding-top: 0px;
 		padding-left: 0;
 	}
 
@@ -1452,7 +1439,7 @@ gap:15px !important;
 	
 	.always-quality {
 		background-size: 350px;
-		padding: 60px 0 30px;
+		/* padding: 60px 0 30px; */
 	}
 	
 	.always-quality::before {		
@@ -1462,3 +1449,126 @@ gap:15px !important;
 
 
 }
+@media(max-width:1080px){
+	.icon-box .icon-box-content h3 {
+    font-size: 12px;
+    color: var(--accent-color);
+    /* text-transform: lowercase; */
+	
+}
+.py-5 {
+  padding-top:10px  !important;
+  padding-bottom: 3rem !important; /* keep this if you still want bottom padding */
+}
+
+}
+.fact-count{
+	font-size: 45px;
+	
+}
+
+.info-section,#bookings-form-section {
+  background-color: #951F44;
+}
+
+.info-box {
+  padding: 20px;
+}
+
+.icon i {
+  color:#E9B472; /* Bootstrap warning yellow */
+}
+    .menu-section {
+      text-align: center;
+    }
+
+    /* .menu-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      padding: 20px;
+      transition: all 0.3s ease;
+	        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+    } */
+   .menu-card {
+  position: relative;
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 20px;
+  background-image: url('../image/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+.menu-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+    background-color: rgba(233, 180, 114, 0.5); /* #E9B472 with 50% opacity */
+
+  /* background-color: rgba(255, 255, 255, 0.7); white overlay with 70% opacity */
+  z-index: 0;
+}
+
+.menu-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+    .menu-card:hover {
+      transform: translateY(5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-card img {
+      border-radius: 50%;
+      width: 100%;
+      max-width: 220px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    .menu-title {
+      font-size: 22px;
+      font-weight: bold;
+      /* color:#E9B472; */
+    }
+
+    .menu-subtitle {
+      font-size: 16px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      /* color: #ffffff; */
+    }
+
+    .price-tag {
+      font-size: 18px;
+      font-weight: 600;
+      background-color:#E9B472;
+      color: #000;
+      padding: 8px 15px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .gallery-img {
+      width: 100%;
+      border-radius: 10px;
+      height:250px;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+    .gallery-img:hover {
+      transform: scale(1.03);
+    }
+    .gallery-container {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
