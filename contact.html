@@ -15,7 +15,6 @@
 <body>
 
 <!-- Bootstrap Navbar -->
-<!-- Bootstrap Navbar -->
 <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
   <div class="container">
     <!-- Logo -->
@@ -48,39 +47,27 @@
     </div>
   </div>
 </nav>
-
-<div class="page-header parallaxie" style="background-image: url('image/aboutbanner.jpeg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center center;">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <!-- Page Header Box start -->
-        <div class="page-header-box text-center">
-          <h1 class="text-anime">
-            <div class="line">
-              <div class="word">Contact<span class="word">Us</span></div>
-            </div>
-          </h1>
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb wow fadeInUp" data-wow-delay="0.5s">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>   <li>/</li>           <li class="breadcrumb-item active" aria-current="page">  Contact Us</li>
-            </ol>
-          </nav>
-        </div>
-        <!-- Page Header Box end -->
-      </div>
-    </div>
+<!-- Banner Section -->
+<div class="page-headers position-relative">
+  <div class="container text-center text-white">
+    <h1 class="display-4 fw-bold">Contact <span>Us</span></h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center mt-3">
+        <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li><li>/</li>
+        <li class="breadcrumb-item active text-white" aria-current="page">Contact Us</li>
+      </ol>
+    </nav>
   </div>
-</div>
-<!-- Booking Info Section -->
-<div class="container">
-  <section class="info-section py-5">
+
+  <!-- Info Section (absolute on banner) -->
+  <section class="info-section text-white">
     <div class="container">
-      <div class="row text-center text-white">
+      <div class="row text-center">
 
         <!-- Booking Time -->
-        <div class="col-md-4 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-4 mb-4 mb-md-0">
           <div class="info-box">
-            <div class="icon mb-2">
+            <div class="icon mb-3">
               <i class="bi bi-clock-fill fs-1 text-warning"></i>
             </div>
             <h4 class="fw-bold">Booking Hours</h4>
@@ -89,10 +76,10 @@
           </div>
         </div>
 
-        <!-- Location Info -->
-        <div class="col-md-4 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+        <!-- Location -->
+        <div class="col-md-4 mb-4 mb-md-0">
           <div class="info-box">
-            <div class="icon mb-2">
+            <div class="icon mb-3">
               <i class="bi bi-geo-alt-fill fs-1 text-warning"></i>
             </div>
             <h4 class="fw-bold">Visit Us</h4>
@@ -101,10 +88,10 @@
           </div>
         </div>
 
-        <!-- Contact Info -->
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <!-- Contact -->
+        <div class="col-md-4">
           <div class="info-box">
-            <div class="icon mb-2">
+            <div class="icon mb-3">
               <i class="bi bi-envelope-fill fs-1 text-warning"></i>
             </div>
             <h4 class="fw-bold">Get in Touch</h4>
@@ -118,6 +105,11 @@
     </div>
   </section>
 </div>
+
+<!-- Spacer to prevent overlap -->
+<div class="info-spacer"></div>
+
+
 
 <!-- Booking Form + Map -->
 <div class="container py-5">
